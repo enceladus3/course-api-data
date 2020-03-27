@@ -14,7 +14,7 @@ public class TopicService {
 	@Autowired
 	private TopicRepository topicRepository;
 
-//	private List<Topic> topics = new ArrayList<>(Arrays.asList(
+	//	private List<Topic> topics = new ArrayList<>(Arrays.asList(
 // 			new Topic("spring", "Spring Framework", "Spring Framework description"),
 //			new Topic("java", "Java Code", "Java Core description"),
 //			new Topic("javascript", "JavaScript", "JavaScript description")
@@ -25,7 +25,7 @@ public class TopicService {
 		topicRepository.findAll().forEach(topics::add);
 		return topics;
 	}
-	
+
 	public Topic getTopic(String id) {
 //		return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
 		return topicRepository.findById(id).orElse(null);
